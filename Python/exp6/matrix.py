@@ -2,10 +2,10 @@ import numpy as np
 
 class myMatrix:
 
-	def __init__(self, rows=1, cols=1):
+	def __init__(self, rows, cols):
 		self.rows = rows
 		self.cols = cols
-		self.matrix = np.random.random((rows, cols))
+		self.matrix = np.random.randint(low=1,high=10, size=(rows,cols))
 
 	def add(self, add_matr):
 		for i in range(0, self.rows):
@@ -31,7 +31,7 @@ class myMatrix:
 		"""
 		returns matrix object with matrix inverse of current obj
 		"""
-		inv_obj = myMatrix()
+		inv_obj = myMatrix(self.rows,self.cols)
 		inv_obj.matrix = np.linalg.inv(self.matrix)
 		return inv_obj
 
