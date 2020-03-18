@@ -8,20 +8,13 @@ class myMatrix:
 		self.matrix = np.random.randint(low=1,high=10, size=(rows,cols))
 
 	def add(self, add_matr):
-		for i in range(0, self.rows):
-			for j in range(0, self.cols):
-				self.matrix[i][j] = self.matrix[i][j] + add_matr.matrix[i][j]
+		self.matrix = self.matrix + add_matr.matrix
 	
 	def subtr(self, subtr_matr):
-		for i in range(0, self.rows):
-			for j in range(0, self.cols):
-				self.matrix[i][j] = self.matrix[i][j] - subtr_matr.matrix[i][j]
+		self.matrix = self.matrix - subtr_matr.matrix
 
 	def mult(self, multi_matr):
-		for i in range(0, self.rows):
-			for j in range(0, self.cols):
-				for k in range(0, self.cols):
-					self.matrix[i][j] = self.matrix[i][k] * multi_matr.matrix[k][j]	
+		self.matrix = self.matrix * multi_matr.matrix	
 	
 	def display_matr(self):
 		print(self.matrix)
